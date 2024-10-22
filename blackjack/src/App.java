@@ -1,11 +1,10 @@
-import clases.Mazo;
+import clases.Partida.Partida;
+
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Mazo mazo = new Mazo();
-
-        System.out.println(mazo);
-
-        System.out.println(mazo.contarCartas());
+        Scanner scanner = new Scanner(System.in);
+        Partida.empezarPartida(scanner);
     }
 }
