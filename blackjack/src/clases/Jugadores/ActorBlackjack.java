@@ -25,4 +25,10 @@ public abstract class ActorBlackjack {
     public void setMano(Mano mano) {
         this.mano = mano;
     }
+
+    @Override
+    public String toString() {
+        return  "nombre: " + nombre +
+                ", mano: " + mano;
+    }
 }

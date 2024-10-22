@@ -28,8 +28,6 @@ public class Mano {
 
     @Override
     public String toString() {
-        return "Mano{" +
-                "mano=" + mano +
-                '}';
+        return mano.toString();
     }
 }

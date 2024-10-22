@@ -17,15 +17,28 @@ public class Croupier extends ActorBlackjack{
         ArrayList<ActorBlackjack> jugadoresConMano = new ArrayList<>();
 
         for (int i = 0; i < jugadores.size(); i++) {
-            Jugador jugador = (Jugador) jugadores.get(i);
-            Mano mano = new Mano();
+            if (jugadores.get(i) instanceof Jugador jugador) {
+                Mano mano = new Mano();
 
-            mano.setMano(mazo.sacarCarta(), mazo.sacarCarta());
+                mano.setMano(mazo.sacarCarta(), mazo.sacarCarta());
+                jugador.setMano(mano);
+                jugadoresConMano.add(jugador);
+            }else{
+                Croupier croupier = (Croupier) jugadores.get(i);
+                Mano mano = new Mano();
 
-            jugador.setMano(mano);
-
-            jugadoresConMano.add(jugador);
+                mano.setMano(mazo.sacarCarta(), mazo.sacarCarta());
+                croupier.setMano(mano);
+                jugadoresConMano.add(croupier);
+            }
         }
         return jugadoresConMano;
+    }
+
+    @Override
+    public String toString() {
+        return "Croupier: {" +
+                super.toString() +
+                "}";
     }
 }

@@ -21,13 +21,15 @@ public class Partida {
         int cantJugadores = scanner.nextInt();
         scanner.nextLine();
 
-        Croupier croupier = new Croupier("HOLA");
+        Croupier croupier = new Croupier("Croupier");
 
+        //Instancia de jugadores default de prueba
         ArrayList<ActorBlackjack> jugadores = new ArrayList<>();
-        jugadores.add(new Jugador("Mazi"));
-        jugadores.add(new Jugador("Mauro"));
-        jugadores.add(new Jugador("Bubbi"));
-        jugadores.add(new Jugador("Tobias"));
+        for (Integer i = 1; i <= cantJugadores; i++) {
+            String nombre = "Jugador ".concat(i.toString());
+            jugadores.add(new Jugador(nombre));
+        }
+        jugadores.add(croupier);
 
         jugadores = croupier.repartir(mazo, jugadores);
 
