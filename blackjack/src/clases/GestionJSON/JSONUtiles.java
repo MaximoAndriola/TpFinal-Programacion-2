@@ -1,4 +1,4 @@
-package manejoJSON;
+package clases.GestionJSON;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
