@@ -16,6 +16,15 @@ public class Mano {
     }
 
     //Metodos personalizados
+    public int getValor (){
+        int valor = 0;
+        for (int i = 0; i < mano.size(); i++){
+            valor += mano.get(i).getValor();
+        }
+
+        return valor;
+    }
+
     public void verMano() {
         for (Carta carta : mano) {
             System.out.println(carta);
