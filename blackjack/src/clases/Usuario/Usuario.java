@@ -1,7 +1,13 @@
 package clases.Usuario;
 
 public class Usuario {
-    String nombre;
-    String contrasenia;
-    double saldo;
+    private String nombre;
+    private String contrasenia;
+    private double saldo;
+    private boolean esAdmin;
+
+
+
+
+
 }
