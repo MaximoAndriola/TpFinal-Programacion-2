@@ -37,6 +37,13 @@ public class Usuario {
     public boolean isEsAdmin() {
         return esAdmin;
     }
-    
+
+    public void verSaldo() {
+        System.out.println(saldo);
+    }
+
+    public void cargarSaldo(double monto) {
+        saldo += monto;
+    }
 }
 
