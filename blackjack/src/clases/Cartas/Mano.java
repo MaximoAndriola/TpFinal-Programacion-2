@@ -31,7 +31,7 @@ public class Mano {
         }
     }
 
-    public void pedirCarta(Carta carta){
+    public void agregarCarta(Carta carta){
         mano.add(carta);
     }
 
