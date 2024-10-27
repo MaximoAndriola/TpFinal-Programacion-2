@@ -1,6 +1,7 @@
 package clases.Jugadores;
 
 import clases.Cartas.Mano;
+import clases.Cartas.Mazo;
 
 public abstract class ActorBlackjack {
     private String nombre;
@@ -24,6 +25,11 @@ public abstract class ActorBlackjack {
 
     public void setMano(Mano mano) {
         this.mano = mano;
+    }
+
+    //Metodos custom
+    public void pedirCarta (Mazo mazo){
+        mano.agregarCarta(mazo.sacarCarta());
     }
 
     @Override

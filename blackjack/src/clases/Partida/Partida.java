@@ -13,29 +13,31 @@ import java.util.Scanner;
 public class Partida {
     //Aca se manejan los metodos para el desarrollo de la partida
 
-    public static void empezarPartida (Scanner scanner){
+    public static void empezarPartida (Scanner scanner) {
+        Croupier croupier = new Croupier("Croupier");
         Mazo mazo = new Mazo();
         mazo.mezclar();
 
-        System.out.println("Cuantos jugadores van a jugar (1-4)");
-
-        int cantJugadores = scanner.nextInt();
-        scanner.nextLine();
-
-        Croupier croupier = new Croupier("Croupier");
-
-        //Instancia de jugadores default de prueba
-        ArrayList<ActorBlackjack> jugadores = new ArrayList<>();
-        for (Integer i = 1; i <= cantJugadores; i++) {
-            String nombre = "Jugador ".concat(i.toString());
-            jugadores.add(new Jugador(nombre));
-        }
-        jugadores.add(croupier);
-
-        jugadores = croupier.repartir(mazo, jugadores);
+        //Instancia de jugadores
+        ArrayList<Jugador> jugadores = ManejoPartida.elegirJugadores(scanner);
+        System.out.println(jugadores);
 
         System.out.println("Comenzo la partida");
-        System.out.println(jugadores);
-    }
+        //Repartir
+        for (Jugador jugador : jugadores) {
+            croupier.repartir(mazo, jugador);
+        }
+        croupier.repartir(mazo, croupier);
 
+        System.out.println(jugadores);
+        System.out.println(croupier);
+        //Prueba del metodo de determinar ganador, TODO: cuando este el metodo de pedir carta se va a modificar
+        System.out.println("GANADORES: ");
+        for (Jugador jugador : jugadores) {
+            if (ManejoPartida.determinarGanador(croupier, jugador) instanceof Jugador) {
+                System.out.println(jugador);
+            } else
+                System.out.println(croupier);
+        }
+    }
 }

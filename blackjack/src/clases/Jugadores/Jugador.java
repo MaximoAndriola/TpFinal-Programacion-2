@@ -12,9 +12,9 @@ public class Jugador extends ActorBlackjack{
 
     @Override
     public String toString() {
-        return "Jugador: {" +
+        return "\nJugador: {" +
                 super.toString() +
                 "Apuesta: " + apuesta +
-                "}\n";
+                "}";
     }
 }
