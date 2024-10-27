@@ -28,12 +28,15 @@ public class Partida {
         }
         croupier.repartir(mazo, croupier);
 
+        jugadores.getFirst().pedirCarta(mazo);
         System.out.println(jugadores);
         System.out.println(croupier);
         //Prueba del metodo de determinar ganador, TODO: cuando este el metodo de pedir carta se va a modificar
         System.out.println("GANADORES: ");
         for (Jugador jugador : jugadores) {
-            if (ManejoPartida.determinarGanador(croupier, jugador) instanceof Jugador) {
+            if (ManejoPartida.determinarGanador(croupier, jugador) instanceof Jugador && jugador.getNombre().equals("empate")) {
+                System.out.println(jugador);
+            } else if (ManejoPartida.determinarGanador(croupier, jugador) instanceof Jugador) {
                 System.out.println(jugador);
             } else
                 System.out.println(croupier);
