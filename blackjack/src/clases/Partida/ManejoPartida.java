@@ -13,6 +13,7 @@ import java.util.Scanner;
 public abstract class ManejoPartida {
     //Metodos Para las funcionalidades de la partida
     public static final int TAMANIO_INICIAL_MANO = 2;
+    public static final int VALOR_MAXIMO_MANO = 21;
 
     public static ArrayList<Jugador> elegirJugadores (Scanner scanner){
         ArrayList<Jugador> jugadores = new ArrayList<>();
@@ -47,12 +48,35 @@ public abstract class ManejoPartida {
 
     public static ActorBlackjack determinarGanador (Croupier croupier, Jugador jugador){
         //Se compara el valor de la mano de cada uno
-        if (croupier.getMano().getValor() >= jugador.getMano().getValor()){
-            //Si gano el croupier
-            return croupier;
-        }else {
-            //Si gano el jugador
+        if (!validarValorMano(croupier) && validarValorMano(jugador)){
+            //Si la mano del croupier se pasa y la del jugador no, gana el jugador
             return jugador;
+        } else if (validarValorMano(croupier) && !validarValorMano(jugador)) {
+            //Si la mano del jugador se pasa y la del croupier no, gana el croupier
+            return croupier;
+        }else if (validarValorMano(croupier) && validarValorMano(jugador)){
+            //Si ninguno de los dos se pasa, se compara el valor para saber cual gana
+            if (croupier.getMano().getValor() >= jugador.getMano().getValor()){
+                //Si gano el croupier
+                return croupier;
+            }else {
+                //Si gano el jugador
+                return jugador;
+            }
+        }else {
+            //Si se pasan los 2 empatan y se instancia un jugador que va a guardar
+            // la apuesta para la siguiente mano //TODO agregar apuesta aca
+            return new Jugador("empate");
         }
+    }
+
+    public static boolean validarValorMano (ActorBlackjack actor){
+        boolean esValido = false;
+
+        if (actor.getMano().getValor() <= VALOR_MAXIMO_MANO){
+            esValido = true;
+        }
+
+        return esValido;
     }
 }
