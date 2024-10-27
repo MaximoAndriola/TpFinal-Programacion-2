@@ -23,12 +23,13 @@ public class Partida {
 
         System.out.println("Comenzo la partida");
         //Repartir
-        for (Jugador jugador : jugadores) {
-            croupier.repartir(mazo, jugador);
-        }
-        croupier.repartir(mazo, croupier);
+        croupier.repartir(mazo, jugadores, croupier);
 
+        //prueba
         jugadores.getFirst().pedirCarta(mazo);
+        //juega el croupier
+        croupier.jugar(mazo);
+
         System.out.println(jugadores);
         System.out.println(croupier);
         //Prueba del metodo de determinar ganador, TODO: cuando este el metodo de pedir carta se va a modificar
