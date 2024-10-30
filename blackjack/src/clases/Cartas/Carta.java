@@ -42,6 +42,10 @@ public class Carta {
         return valor;
     }
 
+    public RangoCarta getRango() {
+        return rango;
+    }
+
     @Override
     public String toString() {
         return rango + " de " + palo;

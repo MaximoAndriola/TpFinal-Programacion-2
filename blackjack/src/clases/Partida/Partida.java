@@ -1,10 +1,13 @@
 package clases.Partida;
 
+import clases.Cartas.Carta;
 import clases.Cartas.Mano;
 import clases.Cartas.Mazo;
 import clases.Jugadores.ActorBlackjack;
 import clases.Jugadores.Croupier;
 import clases.Jugadores.Jugador;
+import enums.PaloCarta;
+import enums.RangoCarta;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -19,14 +22,14 @@ public class Partida {
 
         //Instancia de jugadores
         ArrayList<Jugador> jugadores = ManejoPartida.elegirJugadores(scanner);
-        System.out.println(jugadores);
 
-        System.out.println("Comenzo la partida");
+        System.out.println("-----------------------------------------------" +
+                            "Comenzo la partida" +
+                            "-----------------------------------------------");
+
         //Repartir
         croupier.repartir(mazo, jugadores, croupier);
 
-        //prueba
-        jugadores.getFirst().pedirCarta(mazo);
         //juega el croupier
         croupier.jugar(mazo);
 
@@ -35,12 +38,8 @@ public class Partida {
         //Prueba del metodo de determinar ganador, TODO: cuando este el metodo de pedir carta se va a modificar
         System.out.println("GANADORES: ");
         for (Jugador jugador : jugadores) {
-            if (ManejoPartida.determinarGanador(croupier, jugador) instanceof Jugador && jugador.getNombre().equals("empate")) {
-                System.out.println(jugador);
-            } else if (ManejoPartida.determinarGanador(croupier, jugador) instanceof Jugador) {
-                System.out.println(jugador);
-            } else
-                System.out.println(croupier);
+            ActorBlackjack actor = ManejoPartida.determinarGanador(croupier, jugador);
+            System.out.println(actor);
         }
     }
 }
