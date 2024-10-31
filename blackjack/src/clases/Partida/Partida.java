@@ -7,6 +7,7 @@ import clases.Jugadores.Jugador;
 import clases.Usuario.InicioSesion;
 import clases.Usuario.Usuario;
 import exepciones.UsuarioInvalidoExeption;
+import exepciones.ValorInvalidoException;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -29,11 +30,26 @@ public class Partida {
         //Repartir
         croupier.repartir(mazo, jugadores, croupier);
 
+        //Mostrar participantes
+        System.out.println(jugadores);
+        System.out.println(croupier.getNombre() + ": " + croupier.getMano().getCartas().getFirst() + " -");
+
+        //Pedir carta
+        try {
+            for (int i = 0; i < jugadores.size(); i++){
+                jugadores.get(i).quierePedirUnaCartaMas(scanner, mazo);
+            }
+        } catch (ValorInvalidoException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println(jugadores.getFirst().getMano().getValor());
+
         //juega el croupier
         croupier.jugar(mazo);
 
-        System.out.println(jugadores);
+        //mostrar croupier
         System.out.println(croupier);
+
         //Prueba del metodo de determinar ganador, TODO: cuando este el metodo de pedir carta se va a modificar
         System.out.println("GANADORES: ");
         for (Jugador jugador : jugadores) {
