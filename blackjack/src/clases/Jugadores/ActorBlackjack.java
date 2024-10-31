@@ -34,7 +34,7 @@ public abstract class ActorBlackjack {
 
     @Override
     public String toString() {
-        return  "nombre: " + nombre +
-                ", mano: " + mano;
+        return  "Nombre: " + nombre +
+                ", Mano: " + mano;
     }
 }

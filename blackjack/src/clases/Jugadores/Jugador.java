@@ -1,10 +1,7 @@
 package clases.Jugadores;
 
-import clases.Cartas.Carta;
 import clases.Cartas.Mano;
 import clases.Cartas.Mazo;
-import clases.Partida.ManejoPartida;
-import clases.Ranking.Apuesta;
 import exepciones.ValorInvalidoException;
 
 import java.util.Scanner;
@@ -69,10 +66,10 @@ public class Jugador extends ActorBlackjack {
 
     @Override
     public String toString() {
-        return "Jugador{" +
+        return "\nJugador{" +
                 super.toString() +
-                "apuesta=" + apuesta +
-                ", saldo=" + saldo +
-                '}';
+                "Apuesta: " + apuesta +
+                ", Saldo: " + saldo +
+                "}";
     }
 }

@@ -36,7 +36,7 @@ public class Croupier extends ActorBlackjack{
 
     @Override
     public String toString() {
-        return "Croupier: {" +
+        return "\nCroupier: {" +
                 super.toString() +
                 "}";
     }
