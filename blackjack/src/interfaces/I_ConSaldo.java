@@ -1,6 +1,6 @@
 package interfaces;
 
 public interface I_ConSaldo {
-    void cargarSaldo ();
+    void cargarSaldo (double monto);
     void verSaldo ();
 }

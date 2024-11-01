@@ -7,7 +7,7 @@ import interfaces.I_ConSaldo;
 
 import java.util.Scanner;
 
-public class Jugador extends ActorBlackjack{
+public class Jugador extends ActorBlackjack implements I_ConSaldo{
     private double apuesta;
     private double saldo;
 
@@ -56,16 +56,27 @@ public class Jugador extends ActorBlackjack{
         return opcion;
     }
 
+    //TODO acomodar error de logica de estos metodos
     public void ingresarApuesta(Scanner scanner) {
         System.out.println("\nIngrese su apuesta:");
         apuesta = scanner.nextDouble();
     }
 
-    public void apostar( Scanner scanner) {
+    public void apostar(Scanner scanner) {
 
         ingresarApuesta(scanner);
 
         saldo = saldo - apuesta;
+    }
+
+    @Override
+    public void verSaldo() {
+        System.out.println(saldo);
+    }
+
+    @Override
+    public void cargarSaldo(double monto) {
+        saldo += monto;
     }
 
     @Override

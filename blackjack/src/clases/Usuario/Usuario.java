@@ -1,6 +1,8 @@
 package clases.Usuario;
 
-public class Usuario {
+import interfaces.I_ConSaldo;
+
+public class Usuario implements I_ConSaldo {
     private String nombre;
     private String contrasenia;
     private double saldo;
@@ -38,12 +40,22 @@ public class Usuario {
         return esAdmin;
     }
 
+    @Override
     public void verSaldo() {
         System.out.println(saldo);
     }
 
+    @Override
     public void cargarSaldo(double monto) {
         saldo += monto;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nombre='" + nombre + '\'' +
+                ", saldo=" + saldo +
+                '}';
     }
 }
 
