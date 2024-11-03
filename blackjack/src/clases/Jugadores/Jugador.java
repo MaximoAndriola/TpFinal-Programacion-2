@@ -56,15 +56,21 @@ public class Jugador extends ActorBlackjack implements I_ConSaldo{
         return opcion;
     }
 
-    //TODO acomodar error de logica de estos metodos
-    public void ingresarApuesta(Scanner scanner) {
-        System.out.println("\nIngrese su apuesta:");
-        apuesta = scanner.nextDouble();
+    public void ingresarApuesta(double valor) throws ValorInvalidoException{
+        if(valor <= 0) {
+            throw new ValorInvalidoException("El monto a ingresar debe ser mayor a 0.");
+        }
+        apuesta = valor;
     }
 
-    public void apostar(Scanner scanner) {
+    public void apostar(double monto) {
 
-        ingresarApuesta(scanner);
+        try {
+            ingresarApuesta(monto);
+        } catch (ValorInvalidoException e) {
+            System.out.println("No se pudo cargar el valor ingresado." );
+            return;
+        }
 
         saldo = saldo - apuesta;
     }
@@ -75,7 +81,11 @@ public class Jugador extends ActorBlackjack implements I_ConSaldo{
     }
 
     @Override
-    public void cargarSaldo(double monto) {
+    public void cargarSaldo(double monto) throws ValorInvalidoException{
+        if (monto <= 0) {
+            throw new ValorInvalidoException("El monto ingresado debe ser mayor que cero.");
+        }
+
         saldo += monto;
     }
 

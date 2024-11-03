@@ -1,5 +1,6 @@
 package clases.Usuario;
 
+import exepciones.ValorInvalidoException;
 import interfaces.I_ConSaldo;
 
 public class Usuario implements I_ConSaldo {
@@ -46,7 +47,11 @@ public class Usuario implements I_ConSaldo {
     }
 
     @Override
-    public void cargarSaldo(double monto) {
+    public void cargarSaldo(double monto) throws ValorInvalidoException {
+        if (monto <= 0) {
+            throw new ValorInvalidoException("El monto ingresado debe ser mayor que cero.");
+        }
+
         saldo += monto;
     }
 

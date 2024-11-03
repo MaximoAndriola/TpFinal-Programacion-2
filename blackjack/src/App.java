@@ -1,4 +1,6 @@
+import clases.Jugadores.Jugador;
 import clases.Partida.Partida;
+import exepciones.ValorInvalidoException;
 
 import java.util.Scanner;
 
