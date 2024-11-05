@@ -7,7 +7,7 @@ public class Usuario implements I_ConSaldo {
     private String nombre;
     private String contrasenia;
     private double saldo;
-    private final boolean esAdmin = false;
+    private  boolean esAdmin = false;
 
     // Constructor vacio
     public Usuario() {}
@@ -37,8 +37,12 @@ public class Usuario implements I_ConSaldo {
         this.saldo = saldo;
     }
 
-    public boolean isEsAdmin() {
+    public boolean getEsAdmin() {
         return esAdmin;
+    }
+
+    public void setEsAdmin(boolean esAdmin) {
+        this.esAdmin = esAdmin;
     }
 
     @Override

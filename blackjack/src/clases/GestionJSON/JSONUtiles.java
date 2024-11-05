@@ -12,7 +12,7 @@ public class JSONUtiles {
 
     public static void grabar(JSONArray array) {
         try {
-            FileWriter file = new FileWriter("");
+            FileWriter file = new FileWriter("usuarios.json");
             file.write(array.toString());
             file.flush();
             file.close();
