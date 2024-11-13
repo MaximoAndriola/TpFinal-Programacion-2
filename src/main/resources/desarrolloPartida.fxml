@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="807.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DesarrolloPartidaController">
+   <children>
+      <Group fx:id="grupoJugadores" layoutX="73.0" layoutY="279.0">
+         <children>
+            <VBox fx:id="jugador0" alignment="CENTER" layoutY="5.0" prefHeight="361.0" prefWidth="182.0" spacing="10.0">
+               <children>
+                  <Text fx:id="txtValorMano0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Text>
+                  <Pane prefHeight="420.0" prefWidth="176.0" />
+                  <Label fx:id="lblNombreInvalidoExeption0" prefHeight="17.0" prefWidth="300.0" textFill="RED" />
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Button fx:id="pedir0" mnemonicParsing="false" onAction="#pedir" text="pedir" visible="false" />
+                        <Button fx:id="buttonPlantarse0" mnemonicParsing="false" onAction="#plantarse" text="plantarse" visible="false" />
+                     </children>
+                  </HBox>
+                  <StackPane prefHeight="32.0" prefWidth="177.0">
+                     <children>
+                        <TextField fx:id="txtIngresarNombre0" alignment="TOP_CENTER" prefHeight="25.0" prefWidth="207.0" promptText="Ingresar nombre" visible="false" />
+                        <Button fx:id="buttonAgregarJugador0" mnemonicParsing="false" onAction="#agregarJugador" prefHeight="25.0" prefWidth="149.0" text="agregar jugador" />
+                     </children>
+                  </StackPane>
+                  <Button fx:id="buttonConfirmar0" mnemonicParsing="false" onAction="#confirmar" prefHeight="34.0" prefWidth="73.0" text="confirmar" visible="false" />
+                  <StackPane>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txtSaldo" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ingresar apuesta" visible="false" wrappingWidth="87.357421875" />
+                              <TextField visible="false" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </StackPane>
+                  <Button fx:id="buttonConfirmarApuesta0" mnemonicParsing="false" onAction="#confirmarApuesta" prefHeight="25.0" prefWidth="182.0" text="confirmar apuesta" visible="false" />
+                  <Text fx:id="txtApuesta0" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+            <VBox fx:id="jugador1" alignment="CENTER" layoutX="258.0" layoutY="40.0" prefHeight="361.0" prefWidth="180.0" spacing="10.0">
+               <children>
+                  <Text fx:id="txtValorMano1" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Label fx:id="lblNombreInvalidoExeption1" prefHeight="17.0" prefWidth="300.0" textFill="RED" />
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Button fx:id="pedir1" mnemonicParsing="false" onAction="#pedir" text="pedir" visible="false" />
+                        <Button fx:id="buttonPlantarse1" mnemonicParsing="false" onAction="#plantarse" text="plantarse" visible="false" />
+                     </children>
+                  </HBox>
+                  <StackPane>
+                     <children>
+                        <TextField fx:id="txtIngresarNombre1" alignment="TOP_CENTER" promptText="Ingresar nombre" visible="false" />
+                        <Button fx:id="buttonAgregarJugador1" mnemonicParsing="false" onAction="#agregarJugador" prefHeight="25.0" prefWidth="149.0" text="agregar jugador" visible="false" />
+                     </children>
+                  </StackPane>
+                  <Button fx:id="buttonConfirmar1" mnemonicParsing="false" onAction="#confirmar" text="confirmar" visible="false" />
+                  <StackPane>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txtSaldo" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ingresar apuesta" visible="false" wrappingWidth="87.357421875" />
+                              <TextField visible="false" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </StackPane>
+                  <Button fx:id="buttonConfirmarApuesta1" mnemonicParsing="false" onAction="#confirmarApuesta" prefHeight="25.0" prefWidth="182.0" text="confirmar apuesta" visible="false" />
+                  <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+            <VBox fx:id="jugador2" alignment="CENTER" layoutX="704.0" layoutY="42.0" prefHeight="359.0" prefWidth="180.0" spacing="10.0">
+               <children>
+                  <Text fx:id="txtValorMano2" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Label fx:id="lblNombreInvalidoExeption2" prefHeight="17.0" prefWidth="300.0" textFill="RED" />
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Button fx:id="pedir2" mnemonicParsing="false" onAction="#pedir" text="pedir" visible="false" />
+                        <Button fx:id="buttonPlantarse2" mnemonicParsing="false" onAction="#plantarse" text="plantarse" visible="false" />
+                     </children>
+                  </HBox>
+                  <StackPane>
+                     <children>
+                        <TextField fx:id="txtIngresarNombre2" alignment="TOP_CENTER" promptText="Ingresar nombre" visible="false" />
+                        <Button fx:id="buttonAgregarJugador2" mnemonicParsing="false" onAction="#agregarJugador" prefHeight="25.0" prefWidth="149.0" text="agregar jugador" visible="false" />
+                     </children>
+                  </StackPane>
+                  <Button fx:id="buttonConfirmar2" mnemonicParsing="false" onAction="#confirmar" text="confirmar" visible="false" />
+                  <StackPane>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txtSaldo" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ingresar apuesta" visible="false" wrappingWidth="87.357421875" />
+                              <TextField visible="false" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </StackPane>
+                  <Button fx:id="buttonConfirmarApuesta2" mnemonicParsing="false" onAction="#confirmarApuesta" prefHeight="25.0" prefWidth="182.0" text="confirmar apuesta" visible="false" />
+                  <Text fx:id="txtApuesta2" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+            <VBox fx:id="jugador3" alignment="CENTER" layoutX="974.0" prefHeight="360.0" prefWidth="183.0" spacing="10.0">
+               <children>
+                  <Text fx:id="txtValorMano3" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Label fx:id="lblNombreInvalidoExeption3" prefHeight="17.0" prefWidth="300.0" textFill="RED" />
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Button fx:id="pedir3" mnemonicParsing="false" onAction="#pedir" text="pedir" visible="false" />
+                        <Button fx:id="buttonPlantarse3" mnemonicParsing="false" onAction="#plantarse" text="plantarse" visible="false" />
+                     </children>
+                  </HBox>
+                  <StackPane>
+                     <children>
+                        <TextField fx:id="txtIngresarNombre3" alignment="TOP_CENTER" promptText="Ingresar nombre" visible="false" />
+                        <Button fx:id="buttonAgregarJugador3" mnemonicParsing="false" onAction="#agregarJugador" prefHeight="25.0" prefWidth="149.0" text="agregar jugador" visible="false" />
+                     </children>
+                  </StackPane>
+                  <Button fx:id="buttonConfirmar3" mnemonicParsing="false" onAction="#confirmar" text="confirmar" visible="false" />
+                  <StackPane>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txtSaldo" />
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ingresar apuesta" visible="false" wrappingWidth="87.357421875" />
+                              <TextField visible="false" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </StackPane>
+                  <Button fx:id="buttonConfirmarApuesta3" mnemonicParsing="false" onAction="#confirmarApuesta" prefHeight="25.0" prefWidth="182.0" text="confirmar apuesta" visible="false" />
+                  <Text fx:id="txtApuesta3" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </VBox>
+         </children>
+      </Group>
+      <Button fx:id="buttonContinuar0" layoutX="583.0" layoutY="576.0" mnemonicParsing="false" onAction="#continuar" prefHeight="53.0" prefWidth="115.0" text="CONTINUAR" />
+      <Button fx:id="buttonSeguirJugando" layoutX="583.0" layoutY="576.0" mnemonicParsing="false" onAction="#seguirJugando" prefHeight="53.0" prefWidth="115.0" text="SEGUIR JUGANDO" visible="false" />
+      <Button fx:id="buttonBack" layoutX="55.0" layoutY="47.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="84.0" text="BACK" />
+      <Label fx:id="lblContinuarExeption" layoutX="563.0" layoutY="543.0" prefHeight="17.0" prefWidth="203.0" />
+      <Pane fx:id="paneCroupier" layoutX="547.0" layoutY="28.0" prefHeight="200.0" prefWidth="353.0" />
+      <Text fx:id="txtSaldo" layoutX="146.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txtSaldo" wrappingWidth="298.0" />
+   </children>
+   <stylesheets>
+      <URL value="@desarrolloPartida.css" />
+      <URL value="@stylesTextoDinero.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,10 @@
+/* Estilo para mostrar el saldo como dinero */
+.txtSaldo  {
+    -fx-font-family: "Georgia", serif;
+        -fx-font-size: 28px;
+        -fx-text-fill: linear-gradient(to bottom, #ffd700, #b8860b); /* Dorado */
+        -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 4, 0.5, 1, 1); /* Sombra */
+        -fx-stroke: #b8860b; /* Borde oscuro */
+        -fx-stroke-width: 1px;
+        -fx-font-weight: bold;
+}

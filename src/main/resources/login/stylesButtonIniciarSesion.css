@@ -1,0 +1,23 @@
+/* Estilo base del botón */
+#buttonIniciarSesion {
+    -fx-background-color: #3b83bd;       /* Color verde suave */
+    -fx-text-fill: white;                /* Texto blanco */
+    -fx-font-size: 16px;                 /* Tamaño de fuente */
+    -fx-padding: 10 20;                  /* Espaciado interno */
+    -fx-background-radius: 8;            /* Bordes redondeados */
+    -fx-border-radius: 8;                /* Bordes redondeados */
+    -fx-cursor: hand;                    /* Cambia el cursor a mano */
+    -fx-font-weight: bold;               /* Texto en negrita */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 0, 5); /* Sombra */
+}
+
+/* Estilo al pasar el cursor */
+#buttonIniciarSesion:hover {
+    -fx-background-color: #3b83bd       /* Color verde más oscuro */
+}
+
+/* Estilo al hacer clic */
+#buttonIniciarSesion:pressed {
+    -fx-background-color: #3e8e41;       /* Color verde aún más oscuro */
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 1); /* Efecto de sombra interna */
+}

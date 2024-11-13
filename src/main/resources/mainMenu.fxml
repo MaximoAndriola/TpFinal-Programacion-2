@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="472.0" prefWidth="789.0" stylesheets="@stykesMainMenu.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenuController">
+   <children>
+      <Button fx:id="buttonJugar" layoutX="45.0" layoutY="66.0" mnemonicParsing="false" onAction="#jugar" text="JUGAR" />
+      <Button fx:id="buttonScoreboard" layoutX="45.0" layoutY="106.0" mnemonicParsing="false" onAction="#buttonScoreboard" text="SCOREBORAD" />
+      <Button fx:id="buttonCerrarSesion" layoutX="46.0" layoutY="431.0" mnemonicParsing="false" onAction="#cerrarSesion" text="CERRAR SESION" />
+      <TableView fx:id="tblApuestas" layoutX="470.0" layoutY="60.0" prefHeight="324.0" prefWidth="254.0" visible="false">
+        <columns>
+          <TableColumn fx:id="colUsername" prefWidth="126.0" sortType="DESCENDING" text="USERNAME" />
+          <TableColumn fx:id="colApuesta" prefWidth="127.0" sortType="DESCENDING" text="APUESTA" />
+        </columns>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TableView>
+      <Button layoutX="45.0" layoutY="396.0" mnemonicParsing="false" onAction="#cargarSaldo" text="CARGAR SALDO" />
+      <TextField fx:id="txtFIngresarNombre" layoutX="597.0" layoutY="35.0" prefHeight="25.0" prefWidth="127.0" promptText="ingresar nombre" visible="false" />
+      <Button fx:id="buttonBuscar" layoutX="470.0" layoutY="35.0" mnemonicParsing="false" onAction="#filtrarNombre" prefHeight="25.0" prefWidth="127.0" text="buscar" textAlignment="CENTER" visible="false" />
+      <Pane fx:id="paneIngresarSaldo" layoutX="156.0" layoutY="353.0" prefHeight="68.0" prefWidth="158.0" visible="false">
+         <children>
+            <Label fx:id="lblValorInvalidoExeption" layoutX="2.0" layoutY="-1.0" prefHeight="17.0" prefWidth="158.0" textFill="RED" />
+            <Button layoutX="1.0" layoutY="40.0" mnemonicParsing="false" onAction="#confirmarPago" text="CONFIRMAR" />
+            <Button layoutX="84.0" layoutY="40.0" mnemonicParsing="false" onAction="#cancelarPago" text="CANCELAR" />
+            <TextField fx:id="txtFIngresarSaldo" layoutX="1.0" layoutY="16.0" prefHeight="25.0" prefWidth="158.0" promptText="Ingresar saldo" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+      <Text fx:id="txtSaldo" layoutX="503.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txtSaldo" textAlignment="RIGHT" />
+   </children>
+   <stylesheets>
+      <String fx:value="stylesTextoDinero.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,6 @@
+#root {
+    -fx-background-image: url("assets/fondoMenu.jpg"); /* Ruta relativa desde resources */
+    -fx-background-size: auto;  /* Ajusta la imagen para cubrir todo el área */
+    -fx-background-position: center center; /* Centra la imagen */
+    -fx-background-repeat: no-repeat;
+}

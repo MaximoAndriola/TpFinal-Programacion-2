@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistrarseController">
+   <children>
+      <Button fx:id="registrarseButton" layoutX="263.0" layoutY="243.0" mnemonicParsing="false" onAction="#registrarse" text="Registrarse" />
+      <TextField fx:id="txtIngresarUsuario" layoutX="275.0" layoutY="110.0" promptText="ESCRIBA AQUI" />
+      <PasswordField fx:id="txtIngresarContrasenia" layoutX="275.0" layoutY="154.0" promptText="ESCRIBA AQUI" />
+      <Label layoutX="177.0" layoutY="114.0" text="USUARIO" />
+      <Label layoutX="177.0" layoutY="158.0" text="CONTRASEÑA" />
+      <Label fx:id="exeptionRegistroUsuario" layoutX="176.0" layoutY="77.0" prefHeight="17.0" prefWidth="373.0" textFill="RED" />
+      <Label fx:id="exeptionRegistroPasword" layoutX="173.0" layoutY="192.0" prefHeight="17.0" prefWidth="373.0" textFill="RED" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButton" text="back" />
+   </children>
+</AnchorPane>
