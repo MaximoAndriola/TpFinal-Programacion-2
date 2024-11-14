@@ -95,34 +95,27 @@ public class DesarrolloPartidaController {
         Button buttonConfirmar = (Button) event.getSource();
         int iJugador = Integer.parseInt(buttonConfirmar.getId().replace("buttonConfirmar", ""));
 
-        // Obtén el VBox del jugador actual
         jugador = (VBox) grupoJugadores.getChildren().get(iJugador);
 
-        // Accede a los elementos dentro del VBox del jugador actual
         Label lblExeption = (Label) jugador.getChildren().get(2);
         StackPane pane = (StackPane) jugador.getChildren().get(4);
         TextField txtIngresarNombre = (TextField) pane.getChildren().getFirst();
 
         try {
-            // Intentar validar el nombre
             InicioSesion.validarNombreJugador(txtIngresarNombre.getText(), jugadores);
 
-            // Si es válido, agregar al jugador y actualizar UI
             jugadores.add(new Jugador(txtIngresarNombre.getText()));
             lblExeption.setText(" ");
             buttonConfirmar.setVisible(false);
             txtIngresarNombre.setEditable(false);
 
-            // Mostrar los botones para el siguiente jugador, si hay uno
             if (iJugador < grupoJugadores.getChildren().size() - 1) {
-                // Obtén el siguiente VBox de jugador
                 VBox jugadorSig = (VBox) grupoJugadores.getChildren().get(iJugador + 1);
                 StackPane paneSig = (StackPane) jugadorSig.getChildren().get(4);
                 Button buttonSig = (Button) paneSig.getChildren().get(1);
                 buttonSig.setVisible(true);
             }
         } catch (NombreInvalidoExeption e) {
-            // Mostrar mensaje de error si el nombre es inválido
             lblExeption.setText(e.getMessage());
         }
     }
@@ -148,7 +141,6 @@ public class DesarrolloPartidaController {
             }
             actualizarCartasCroupier();
 
-            //Setear visibilidad apuesta
             jugador = (VBox) grupoJugadores.getChildren().getFirst();
             StackPane stackPane = (StackPane) jugador.getChildren().get(6);
             HBox hBox = (HBox) stackPane.getChildren().get(1);
@@ -285,22 +277,20 @@ public class DesarrolloPartidaController {
         agregarCarta(carta2, paneCroupier);
     }
 
-    // Metodo para añadir cartas al Pane de manera superpuesta
     void agregarCarta(String rutaImagenCarta, Pane pane) {
         // Crear una nueva ImageView para la carta
         ImageView nuevaCarta = new ImageView(new Image(rutaImagenCarta));
-        nuevaCarta.setFitWidth(100); // Ancho de cada carta
-        nuevaCarta.setFitHeight(150); // Alto de cada carta
+        nuevaCarta.setFitWidth(100);
+        nuevaCarta.setFitHeight(150);
 
         // Calcular la posición en la que debe colocarse la nueva carta
         int cantidadCartas = pane.getChildren().size();
-        double offsetX = cantidadCartas * 20; // Ajustar para controlar el nivel de superposición
+        double offsetX = cantidadCartas * 20;
 
         // Establecer la posición en el Pane
         nuevaCarta.setLayoutX(offsetX);
-        nuevaCarta.setLayoutY(0); // Puedes ajustar Y si quieres inclinar las cartas
+        nuevaCarta.setLayoutY(0);
 
-        // Añadir la nueva carta al Pane
         pane.getChildren().add(nuevaCarta);
     }
 
@@ -326,18 +316,15 @@ public class DesarrolloPartidaController {
         Button buttonPlantarse = (Button) event.getSource();
         int iJugador = Integer.parseInt(buttonPlantarse.getId().replace("buttonPlantarse", ""));
 
-        // Obtener el VBox del jugador y su HBox para los botones
         VBox jugadorActual = (VBox) grupoJugadores.getChildren().get(iJugador);
         HBox box = (HBox) jugadorActual.getChildren().get(3);
 
-        // Obtener los botones y asegurarse de que se oculten
         Button buttonPedir = (Button) box.getChildren().get(0); // El primer botón es "pedir"
         buttonPlantarse = (Button) box.getChildren().get(1); // El segundo botón es "plantarse"
 
         buttonPedir.setVisible(false);
         buttonPlantarse.setVisible(false);
 
-        // Avanzar al siguiente jugador si hay uno
         if (iJugador < jugadores.size() - 1) {
             jugador = (VBox) grupoJugadores.getChildren().get(iJugador+1);
             StackPane stackPane = (StackPane) jugador.getChildren().get(6);
@@ -348,7 +335,7 @@ public class DesarrolloPartidaController {
 
             setVisibilidadApuestaTrue(txtIngresarApuesta, txtFIngresarApuesta, button);
         } else {
-            juegaCroupier();// Si es el último jugador, comienza el juego del crupier
+            juegaCroupier();
             buttonSeguirJugando.setVisible(true);
         }
     }

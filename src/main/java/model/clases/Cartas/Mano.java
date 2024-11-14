@@ -36,12 +36,6 @@ public class Mano {
         return valor;
     }
 
-    public void verMano() {
-        for (Carta carta : cartas) {
-            System.out.println(carta);
-        }
-    }
-
     public void agregarCarta(Carta carta){
         cartas.add(carta);
     }
